@@ -242,6 +242,16 @@ anything *within that line*:
 -- foo ... baz
 ```
 
+This is useful for robustly testing error messages without failing on 
+differences in GHC's callstack message:
+
+```haskell
+-- |
+-- >>> error "This should fail"
+-- *** Exception: This should fail
+-- ...
+```
+
 ### QuickCheck properties
 
 Haddock (since version 2.13.0) has markup support for properties.  Doctest can
